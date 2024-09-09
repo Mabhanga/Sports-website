@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Match Results</title>
+</head>
+<body>
+    <h1>Match Results</h1>
+    {% if matches %}
+        <ul>
+            {% for match in matches %}
+                <li>{{ match.team1 }} vs {{ match.team2 }}: {{ match.score }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No match results available</p>
+    {% endif %}
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

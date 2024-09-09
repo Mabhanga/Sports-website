@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports News</title>
+</head>
+<body>
+    <h1>Sports News</h1>
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li><a href="{{ article.url }}">{{ article.title }}</a> - {{ article.publishedAt }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
